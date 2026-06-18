@@ -91,7 +91,7 @@ export default function App() {
     }
 
     setStatus('正在交给百度计算器');
-    window.location.assign(`https://www.baidu.com/s?wd=${encodeURIComponent(query)}`);
+    window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(query)}`, '_blank', 'noopener,noreferrer');
   }
 
   function press(button) {
@@ -201,8 +201,8 @@ export default function App() {
           ))}
         </div>
 
-        <a className="fallback-link" href={baiduUrl}>
-          直接用当前表达式打开百度
+        <a className="fallback-link" href={baiduUrl} target="_blank" rel="noreferrer">
+          在新页面用当前表达式打开百度
         </a>
       </section>
     </main>
